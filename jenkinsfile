@@ -3,7 +3,7 @@ pipeline {
     environment {
         DOTNET_CLI_HOME="C:\\Program Files\\dotnet"
     }
-    {
+    
         stages {
             stage("Checkout") {
                 steps {
@@ -29,7 +29,7 @@ pipeline {
                 }
             }
         }
-    }
+    
     post {
         success {
             echo "Build, Test, And Publish Completed successfully."
