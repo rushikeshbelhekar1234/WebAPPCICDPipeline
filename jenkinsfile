@@ -11,18 +11,18 @@ pipeline {
                 }
             }
             stage("Build") {
-                step {
+                steps {
                     bat "dotnet restore"
                     bat "dotnet build --configuration Release"
                 }
             }
             stage("Test") {
-                step {
+                steps {
                     bat "dotnet test --configuration Release"
                 }
             }
             stage("Publish") {
-                step {
+                steps {
                     script {
                         bat "dotnet publish --no restore --configuration Release --output .\\publish"
                     }
